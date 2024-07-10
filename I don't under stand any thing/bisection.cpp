@@ -1,4 +1,4 @@
-//concept || between
+//concept || between //It's the first solution || i have i left
 #include <iostream>
 #include <cmath>
 using namespace std;
