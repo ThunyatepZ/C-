@@ -46,7 +46,5 @@ class Stack{
 };
 
 int main(){
-    Stack s;
-    s.push(2);
 
 }
