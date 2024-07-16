@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 using namespace std;
 
 double cal(double x){
@@ -8,6 +9,7 @@ double cal(double x){
 }
 
 int main(){
+    cout<<fixed<<setprecision(6);
     double x = 0;
     double y;
     double fx2;

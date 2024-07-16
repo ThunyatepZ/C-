@@ -3,7 +3,7 @@
 using namespace std;
 
 double cal(double x,double n,double xm){
-    double fxm = x-pow(xm,n);
+    double fxm = pow(xm,n)-x;
     return fxm;
 }
 

@@ -1,6 +1,7 @@
 //concept || between //It's the first solution || i have i left// x = root 4 of 13
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 using namespace std;
 
 double find_function(double Xm){
@@ -9,6 +10,7 @@ double find_function(double Xm){
 }
 
 int main(){
+    cout<<fixed<<setprecision(6);
     double XL = 1.50;
     double XR = 2.00;
     double x1O;
@@ -34,7 +36,7 @@ int main(){
             break;
         }
         else{
-            cout<<"Error: "<<findError<<" f(xm): "<<fnX1<<" f(xr): "<<fnXR<<endl;
+            cout<<"Error: "<<findError<<" f(x1): "<<fnX1<<" f(xr): "<<fnXR<<endl;
         }
         }cout<<X1;
 }

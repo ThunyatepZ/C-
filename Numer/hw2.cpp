@@ -1,14 +1,16 @@
 //concept || between //It's the first solution || i have i left// x = root 4 of 13
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 using namespace std;
 
 double find_function(double Xm){
-    double fxm = 13-pow(Xm,4);
+    double fxm = pow(Xm,4)-13;
     return fxm;
 }
 
 int main(){
+    cout<<fixed<<setprecision(6);
     double XL = 1.50;
     double XR = 2.00;
     double XM = 0,XMO;

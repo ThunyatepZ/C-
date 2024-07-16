@@ -3,7 +3,7 @@
 using namespace std;
 
 double cal(double x,double n,double xm){
-    double fxm = x-pow(xm,n);
+    double fxm = pow(xm,n)-x;
     return fxm;
 }
 
@@ -28,11 +28,11 @@ int main(){
         FXL = cal(x,n,XL);
         if(FX1 * FXR > 0){
             XR = X1;
-            Error = fabs((XR - X1OLED));
+            Error = fabs(XR - X1OLED);
         }
         else{
             XL = X1;
-            Error = fabs((XL - X1OLED));
+            Error = fabs(XL - X1OLED);
         }
         if(Error < 0.000001){
             break;
