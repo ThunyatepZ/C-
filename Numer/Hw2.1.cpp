@@ -13,7 +13,7 @@ int main(){
     double xold = 0;
     //double e;
     double error;
-    do 
+    do
     {
         xold = x;
         x = calculate(x);
@@ -23,7 +23,7 @@ int main(){
         roundcheck++;
         
         if(isinf(x)){
-            break;
+            return 0;
         }
         
     }while(error>=0.000001);
