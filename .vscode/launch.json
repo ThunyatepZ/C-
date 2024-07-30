@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/C++/Numer",
-      "program": "d:/C++/Numer/build/Debug/outDebug",
+      "cwd": "d:/C++/Datastruct",
+      "program": "d:/C++/Datastruct/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

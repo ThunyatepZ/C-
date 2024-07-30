@@ -1,37 +1,30 @@
-//root7 change to X^2 - 7
 #include <iostream>
 #include <cmath>
 #include <iomanip>
 using namespace std;
 
-double Newton(double x,double fx,double fdx){
-    return x - (fx / fdx);
+double fx(double x){
+    return pow(x,2) - 7;
 }
-
-double findFx(double x){
-    double y;
-    y = pow(x,2) - 7;
-    return y;
-}
-
-double fdiffX(double x){
-    return 2 * x;
+double diff(double x){
+    return 2*x;
 }
 
 int main(){
     cout<<setprecision(6)<<fixed;
-    double x = 2.00,xold;
-    double Error =1 ;
-    double fx,fdx;
+    double x = 2,x1,xold;
+    double fx1,fx2;
+    double Error;
+    int i = 1;
     do
     {
         xold = x;
-        fx = findFx(x);
-        fdx = fdiffX(x);
-        x = Newton(x,fx,fdx);
-        
-        cout<<x<<endl;
+        fx1 = fx(x);
+        fx2 = diff(x);
+        x = x - (fx1 / fx2);
         Error = fabs(x - xold);
-    } while (Error > 0.000001);
+        cout<<"Iteration = "<<i<<" x = "<<x<<endl;
+        i++;
+    } while (Error >= 0.000001);
     
 }

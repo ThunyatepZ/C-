@@ -19,7 +19,7 @@ class linklist{
     Node *ptr;
     int round = 0;
     linklist(){
-        //ptr = NULL;
+        ptr = NULL;
     }
 
     void insertfornt(int data,int posit){
@@ -45,20 +45,31 @@ class linklist{
             Node *btw = new Node(data);
             for(Node *check = ptr; check != NULL;check = check->next){
             if(check->data == posit){
-                btw->next = check->next;
-                check->next = btw;
-                break;
+                if(check->data == posit){
+                    btw->next = check->next;
+                    check->next = btw;
+                    break;
+                }
+                
             }
         }
         }
 
-    void insertback(int data,int posit){
-        Node *b = new Node(data);
-        for(Node *p = ptr; p != NULL; p = p->next){
+    void insertback(int data1,int posit){
+        Node *b = new Node(data1);
+        b->next = ptr;
+        ptr = b;
+        
+
+
+
+        
+            
+        /*(Node *p = ptr; p != NULL; p = p->next){
             b->next = p->next;
             p->next = b;
             break;
-        }
+        }*/
  
         
         
@@ -70,16 +81,18 @@ class linklist{
         }
         cout<<endl;
     }
-    
+    //โค๊ด
     bool check(int position){
         for(Node *c = ptr;c != NULL; c = c->next){
             if(c->data == position){
-                return 1;
+                return true;
             }
             else{
-                return 0;
+                return false;
             }
+            
         }
+        
         return 0;
     }
     
