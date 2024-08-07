@@ -58,6 +58,7 @@ class linklist{
     void insertback(int data1,int posit){
         Node *b = new Node(data1);
         b->next = ptr;
+        
         ptr = b;
         
 
