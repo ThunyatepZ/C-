@@ -104,6 +104,7 @@
     "ctime": "cpp",
     "iomanip": "cpp",
     "sstream": "cpp",
-    "cstring": "cpp"
+    "cstring": "cpp",
+    "stack": "cpp"
   }
 }
