@@ -1,82 +1,67 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-class queue{
+
+class Queue{
     public:
-    int Array[7];
-    int rear = 0;
-    int fornt = 0;
+    int arr[5];
     int size = 5;
-    bool queuefull(){
-        if(rear >= size){
-            return true;
+    int rear = -1;
+    int fornt = 0;
+
+    bool full(){
+        if(rear - fornt >= size-1){
+            return 1;
         }
         else{
-            return false;
+            return 0;
         }
     }
 
-    bool queueEmpty(){
-        if(rear == 0 && fornt == 0){
-            return true;
+    bool empty(){
+        if(fornt > rear){
+            return 1;
         }
         else{
-            return false;
+            return 0;
         }
     }
-    
+
     void enqueue(int data){
-        if(!queuefull()){
-            
-            Array[rear] = data;
+        if(!full()){
             rear++;
+            arr[rear % size] = data;
         }
-        else{
-            rear = rear + 1;
-            int temp = (rear-1) % size;
-            
-            //cout<<temp<<" ";
-            Array[temp] = data;
-        }
-                
     }
-    int dequeue(){
-        if(!queueEmpty()){
-            int temp = Array[fornt];
+
+    void dequeue(){
+        if(!empty()){
             fornt++;
-            return temp;
-        }
-        return -1;
-    }
-    void printqueue(){
-        if(rear < size){
-            for(int i = fornt;i < rear;i++){
-            cout<<Array[i]<<" ";
-        }cout<<endl;
-        }
-        else{
-            for(int i = fornt;i < size;i++){
-            cout<<Array[i]<<" ";
-        }cout<<endl;
         }
         
+    }
+
+    void print(){
+        for(int i = fornt; i <= rear;i++){
+            cout<<arr[i % size]<<" ";
+        }
     }
 };
 
 int main(){
-    queue q;
-    int i;
+    Queue q;
     char c;
-    while(true){
-        
+    int data;
+    while(1){
+        cin>>c;
+        if(c=='e'){
+            cin>>data;
+            q.enqueue(data);
+            q.print();
+        }
+        else if(c == 'd'){
+            q.dequeue();
+            q.print();
+        }
+    }
     
-    cin>>c;
-    if(c == 'e'){
-        cin>>i;
-        q.enqueue(i);
-        q.printqueue();
-    }
-    }
-
-
-
 }

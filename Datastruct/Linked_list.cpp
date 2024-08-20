@@ -68,7 +68,7 @@ class linklist{
             return;
         }
         else{
-             Node *b = new Node(data1);
+            Node *b = new Node(data1);
             Node *pt = ptr;
             if(pt->data != posit){
                 while(pt->data != posit){

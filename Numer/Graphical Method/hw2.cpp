@@ -1,4 +1,5 @@
 //concept || between //It's the first solution || i have i left// x = root 4 of 13
+//Bisection
 #include <iostream>
 #include <cmath>
 #include <iomanip>
