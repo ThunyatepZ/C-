@@ -17,8 +17,8 @@ int main(){
         fxold = fx(x);
         fxnew = fx(x1);
         xnew = x1 - ((fxnew * (x - x1)) / (fxold - fxnew));
-        Error = fabs(xnew - x1);
-        cout<<"Iteration :"<< i <<" x"<<xround<<" = "<<xnew<<endl;
+        Error = fabs((xnew - x1) / xnew) * 100;
+        cout<<"Iteration :"<< i <<" x"<<xround<<" = "<<xnew<<"Error"<< Error<<endl;
         i++;
         xround++;
         x = x1;

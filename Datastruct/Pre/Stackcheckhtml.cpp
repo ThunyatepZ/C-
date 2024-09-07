@@ -45,6 +45,7 @@ class Stack{
         }
 };
 int main(){
+    int Error;
     Stack s;
     string awa;
     getline(cin,awa);

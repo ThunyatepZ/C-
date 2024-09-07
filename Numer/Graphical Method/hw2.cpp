@@ -12,8 +12,8 @@ double find_function(double Xm){
 
 int main(){
     cout<<fixed<<setprecision(6);
-    double XL = 1.50;
-    double XR = 2.00;
+    double XL = 1.5;
+    double XR = 2.0;
     double XM = 0,XMO;
     double findError;
     double fnXR, fnXM;

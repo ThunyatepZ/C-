@@ -4,12 +4,12 @@
 using namespace std;
 
 double calculate(double xleg){
-    return pow(xleg,2) - 7 + xleg;
+    return (sqrt(7) + xleg) / 2;
 }
 int main(){
     //cout<<setprecision(6)<<fixed;
     int roundcheck = 1;
-    double x = 0;
+    double x = 0 ;
     double xold = 0;
     //double e;
     double error;

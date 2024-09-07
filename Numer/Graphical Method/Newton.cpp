@@ -23,7 +23,7 @@ int main(){
         fx2 = diff(x);
         x = x - (fx1 / fx2);
         Error = fabs(x - xold);
-        cout<<"Iteration = "<<i<<" x = "<<x<<endl;
+        cout<<"Iteration = "<<i<<" x = "<<x<<" Error"<<Error<<endl;
         i++;
     } while (Error >= 0.000001);
     
