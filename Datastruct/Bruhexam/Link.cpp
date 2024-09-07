@@ -48,6 +48,14 @@ class linklist{
             cout<<prints->id<<" ";
         }
     }
+
+    void deleted(int position){
+        Node *d = ptr;
+        while(d->next->id != position){
+            d = d->next;
+        }
+        d->next = d->next->next;
+    }
 };
 
 int main(){
@@ -63,6 +71,7 @@ int main(){
     l->addData(80);
     l->addData(90);
     
-    l->insert(50,10);
+    l->insert(50,20);
+    l->deleted(70);
     l->print();
 }

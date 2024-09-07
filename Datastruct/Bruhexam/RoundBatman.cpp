@@ -1,5 +1,6 @@
 #include <iostream>
 #include <queue>
+#include <algorithm>
 using namespace std;
 
 class Keepprocess{
@@ -13,58 +14,24 @@ class Keepprocess{
     }
 };
 
-class Queue{
-    public:
-    Keepprocess *arr;
-    int size;
-    int rear = 0,fornt = 1;
-    Queue(int s){
-        this->arr = new Keepprocess[s];
-        size = s;
+bool compartsort(Keepprocess a,Keepprocess b){
+    if(a.processin < b.processin){
+        return 1;
     }
-
-    bool full(){
-        if(rear == size){
-            return 1;
-        }
-        else{
-            return 0;
-        }
+    else{
+        return 0;
     }
-
-    bool empty(){
-        if(rear < fornt){
-            return 1;
-        }
-        else{
-            return 0;
-        }
-    }
-
-    void enqueue(Keepprocess ProcessForm){
-        if(!full()){
-            arr[++rear] = ProcessForm;
-        }
-        
-    }
-
-    Keepprocess dequeue(){
-        Keepprocess temp;
-        if(!empty()){
-            return arr[fornt++];
-            
-
-        }
-        return Keepprocess();
-    }
-};
+    
+}
 
 int main(){
     int SIZE;
+    int qq;
     int Timecheck = 0,TimeALL = 0;
     cin>>SIZE;
+    cin>>qq;
     Keepprocess p[SIZE];
-    Queue *q = new Queue(SIZE);
+    queue<Keepprocess> q;
     int id,time,timeout;
     
     for(int i = 0;i < SIZE;i++){
@@ -74,34 +41,29 @@ int main(){
         p[i] = Keepprocess(id,time,timeout);
         TimeALL+= timeout;
     }
-
-
-    for(int i = 0;i < SIZE;i++){
-        Keepprocess temp;
-        for(int j = i; j > 0 ;j--){
-            if(p[j].processin < p[j-1].processin){
-                temp = p[j];
-                p[j] = p[j-1];
-                p[j-1] = temp;
-            }
-            
-        }
-    }
+    sort(p,p+SIZE,compartsort);
     
-    int TIMEARR = 0;
-    while(TIMEARR < TimeALL){
-        for(int i = 0; i < SIZE;i++){
-            if(p[i].processin <= TIMEARR && p[i].processin != -1){
-                q->enqueue(p[i]);
-                p[i].processin = -1;
-            }
-        }
-        while(!q->empty()){
-            Keepprocess temp = q->dequeue();
-            for(int j = temp.processout; j > 0;j--){
-                cout<<temp.id<<" : "<<temp.processout;
+    int i = 0;
+    q.push(p[i]);
+    i++;
+
+    while(Timecheck < TimeALL){
+        if(!q.empty()){
+            Keepprocess temp = q.front();
+            q.pop();
+            for(int j = 0;j < qq;j++){
+                cout<<temp.id<<" : "<<temp.processout<<endl;
                 temp.processout--;
-                TIMEARR++;
+                Timecheck++;
+            }
+
+            while(i < SIZE && p[i].processin <= Timecheck){
+                q.push(p[i]);
+                i++;
+            }
+
+            if(temp.processout > 0){
+                q.push(temp);
             }
         }
     }
