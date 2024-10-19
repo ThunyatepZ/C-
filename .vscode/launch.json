@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/C++/Datastruct/Bruhexam",
-      "program": "d:/C++/Datastruct/Bruhexam/build/Debug/outDebug",
+      "cwd": "d:/C++/Datastruct/AfterMid.cpp/prepare",
+      "program": "d:/C++/Datastruct/AfterMid.cpp/prepare/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
